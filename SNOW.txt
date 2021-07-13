@@ -1,0 +1,97 @@
+
+
+---Client Side Scripting---
+
+
+
+- client side scripting - scripts execute when a users browser and are used to manage forms and forms fields
+	exapmles:
+	- show an alert form loads
+	- validate form data
+	- show/hide choices of fields
+	- hide/show sections
+	- set a value on the form
+	- confirmation on submit
+	
+
+GlideUser: 
+	- információt jelenít meg a bejelentkezett felhasználóról
+	- object amivel hozzáférünk a methodshoz g_user
+	- kliens oldalon használjuk
+	- syntax -g_user.<GlideUserMethod()>
+	
+	
+GlideAjax:
+	- kliens oldalról hívunk meg szerver oldali kódot
+	- kliens oldali scripting
+	- syntax - var ga = new GlideAjax(<Script Include>)
+	- GlideAjax példákat GlideAjax Construcorokkal hívjuk meg
+	
+	
+GlideForm:
+	- személyreszabni a form-ot teljesíteni tevékenységeket
+	- g_form - al tudunk a methodushoz hozzáférni
+	- kliens oldali
+	- syntaxisa - -g_form.<GlideFormMethod>(<Parameter>)
+	
+	
+GuideDialogWindow:
+	- Megjeleníti a dialogust a jelenlegi window-ban és frame-ben
+	- kliens oldali
+
+
+	
+---Server Side Scripting---
+  
+  
+
+- Server-side scripts execute on server and database.
+	examples:
+	- Update a field when a record is inserted
+	- Setting a value on a field when parent record is updated
+	- Validate the role of logged in user
+	- Generate events
+	- Send email
+	
+	
+- GlideRecord
+
+- Glidrecord adatbázis kezelési műveleteket tudunk vele végezni
+- szerver oldalon használjuk
+- Syntaxisa GlideRecord-ot class példa készítése
+  var gr = new GlideRecord(<TableName>):
+
+- GlideSystem
+
+- GlideSystem arra használjuk, hogy információt kérdezzünk le a rendszerről és a jelenlegi bejelentkezett felhasználóról.
+- változó a gs
+- Syntaxisa - gs.<GlideSystemMethod>()
+
+- GlideAggregate
+
+- GlideAggregate aggregációs műveletet hajtson végre az adatbázisban.
+- bővítmény a GlideRecord class-ban
+- adatbázis aggregációs lekérdezéseket(műveleteket) biztosít(SUM, COUNT, MIN, MAX, AVG) 
+- Syntaxisa - var agg = new GlideAggregate("incident")
+
+
+---Client Script----
+
+
+
+- Client Script Formokat és form mezőket kezelünk real time-ban(élőben)
+- A böngészőben hajtódik végre(fut le)
+
+
+
+- Mikor használjuk?
+
+- jelenítse meg az alertet amikor a form töltődik
+- jelenjen meg az üzenet, ha a mező értéke változott
+- változtassa meg a mező értékét, ha egy másik mező változott a form-ban
+- jelenjen meg/rejtse ela kiválsztható mezőket
+- jelenjen meg/rejtse el a szekciókat
+
+
+
+
