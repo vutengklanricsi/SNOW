@@ -1,3 +1,46 @@
+----ServiceNow----
+
+
+
+Service now egy task manager platform személyreszabható, konfigurálható fejleszthető cégek számára. 
+Felhő alapú task manager platform aminek keretrendszere van és eszközök amikkel applikációt tudunk létrehozni.
+
+Serivce Now legnagyobb előnye, hogy nem kell előről elkezdeni, ha már hasonló applikációt fejlesztettek már korábban akkor a korábbi ticketeket felhasználható.
+pre-built applikációi vannak amik segítik a folyamatot(készítését).
+
+Service now az egy felhő alapú task manager platform amely egy rekordnak az egy rendszere
+amely egy felületen keresztül tudunk elérni ezeket a komplex szervezeteket.
+
+The company specializes in IT services management (ITSM), IT operations management (ITOM) and IT business management (ITBM),
+ allowing users to manage projects, teams and customer interactions via a variety of apps and plugins.
+ 
+Tegyük fel, hogy a serive nown van egy appunk ami tárolja az információnkat, pl.: id, születési év stb..
+Ezeket az adatokat mi felhasználhatjuk egy másik applikáció készítésében.
+
+ Cloud - Nem kell lokálisan telepíteni vagy tárolni a gépen.
+Könnyen elérhető , mint egy weboldal. 
+
+Applikáció - Applikációként is fejleszthető. Saját applikációt fejleszthetsz belőle az a vállalkozás igényeinek megfelelően.
+  
+Ticket - egy request ami be van jegyezve a munkafolyamat rendszerben részletezi az elvégzendő problémát, feladatot.
+
+Single source of record. mindenkinek elérhető a a rekord.
+
+Incidens - amikor azonnal kezelni kell a problémát.
+
+Request - Az egy kérés amit minél hamarabb és minél hatékonyan kell elvégezni vagy teljesíteni.
+
+Újrafelhasználható folyamat. Ha már egy hasonló request-et teljesítettünk akkor tudnunk kell, hogy mennyi időbe telik újra teljesíteni a taskot.
+
+Miért tároljuk ezt az adatot(folyamatot) egy adatbázisban az applikációban?
+
+Applikáción keresztül. Gyorsabb kiszolgálás, Automitzáció, triage, általánosítani folyamatokat, standardization processs.
+workflow, mobile/ catalog. 
+
+
+ 
+
+
 
 
 ---Client Side Scripting---
@@ -71,7 +114,7 @@ GlideAjax:
 
 
 GlideForm:
-	- arra használják, hogy személyre lehessen szabni a form-ot és tevékenységeket végezzen a formon
+	- arra használják, hogy testre szabhatjuk a form-ot és tevékenységeket végezzen formon
 	- g_form - al tudunk a methodushoz hozzáférni
 	- kliens oldali
 	- syntaxisa - -g_form.<GlideFormMethod>(<Parameter>)
@@ -115,4 +158,46 @@ GuideDialogWindow:
 - bővítmény a GlideRecord class-ban
 - adatbázis aggregációs lekérdezéseket(műveleteket) biztosít(SUM, COUNT, MIN, MAX, AVG) 
 - Syntaxisa - var agg = new GlideAggregate("incident")
+
+
+
+---Api Used in Client Script---
+
+
+
+- Glide Form:
+	- egy metüódus amivel testreszabhatjuk a form-okat.
+	- g_form syntax
+
+
+- addDecoration: incidens form - megmutajta a felhasználónak az ikont(action icont) amikor a kontakt mező ki van töltve.
+
+- addErrorMessage: megjeleníti hiba üzenetet vagy alertet a form felett. Alert üzenetet rak ki,ha user priorityt p1-re rakja.
+
+- addInforMessage: üzenetet jelenítünk meg tájékoztatás jelleggel.
+
+- addOption: Option choice-t ad, választási lehetőséget ad a felhasználónak.
+
+
+
+
+
+
+
+
+
+---GlideAjax---
+
+- Szerver oldali kód ami kliens oldalról fut le. Kliens oldalon kell defininálni a GlideAjaxet.
+
+
+
+példa:
+	- fieldname: configuration item
+	- Type: onChange
+
+
+script inlcude - catch value from the server.
+
+Client callable teszi lehetővé, hogy Glideajax így tud kommunikálni a script include-dal.
 
