@@ -3,6 +3,48 @@
 ---Client Side Scripting---
 
 
+---Client Script----
+
+
+- Client Script Formokat és form mezőket kezelünk real time-ban(élőben)
+- A böngészőben hajtódik végre(fut le)
+
+
+
+- Mikor használjuk?
+
+- jelenítse meg az alertet amikor a form töltődik
+- jelenjen meg az üzenet, ha a mező értéke változott
+- változtassa meg a mező értékét, amikor egy másik mező változott a form-ban (checkbox két opcióval)
+- jelenjen meg/rejtse el a kiválsztható mezőket
+- jelenjen meg/rejtse el a szekciókat
+
+
+- onLoad
+
+- A script lefut amikor a form betöltődik és azelőtt, hogy a felhasználó iránytína
+- Akkor használatos amikor valamit meg kell változtatni a form-on miközben töltődik
+
+- onChange
+
+- Script will run when value of any field is upadated or changed
+- Used to perform some operation as per the field changed
+- paraméterei: control, oldValue, newValue, isLoading, isTemplate
+
+- onSubmit
+
+- script will run when form is submitted or saved
+- used to perform validations before form is saved
+
+- onCellEdit
+
+- script will run when a field value changes on a list
+- paraméterei: sysIds, table, oldValues, newValue, callback
+
+sysId - edited item(whatever item edited it will automatically hold that value)
+table - table name of the eited item
+callback - continue the execution of other related cell edit scripts
+
 
 - client side scripting - scripts execute when a users browser and are used to manage forms and forms fields
 	exapmles:
@@ -29,7 +71,7 @@ GlideAjax:
 
 
 GlideForm:
-	- személyreszabni a form-ot teljesíteni tevékenységeket
+	- arra használják, hogy személyre lehessen szabni a form-ot és tevékenységeket végezzen a formon
 	- g_form - al tudunk a methodushoz hozzáférni
 	- kliens oldali
 	- syntaxisa - -g_form.<GlideFormMethod>(<Parameter>)
@@ -73,48 +115,4 @@ GuideDialogWindow:
 - bővítmény a GlideRecord class-ban
 - adatbázis aggregációs lekérdezéseket(műveleteket) biztosít(SUM, COUNT, MIN, MAX, AVG) 
 - Syntaxisa - var agg = new GlideAggregate("incident")
-
-
----Client Script----
-
-
-
-- Client Script Formokat és form mezőket kezelünk real time-ban(élőben)
-- A böngészőben hajtódik végre(fut le)
-
-
-
-- Mikor használjuk?
-
-- jelenítse meg az alertet amikor a form töltődik
-- jelenjen meg az üzenet, ha a mező értéke változott
-- változtassa meg a mező értékét, amikor egy másik mező változott a form-ban
-- jelenjen meg/rejtse ela kiválsztható mezőket
-- jelenjen meg/rejtse el a szekciókat
-
-
-- onLoad
-
-- A script lefut amikor a form betöltődik és azelőtt, hogy a felhasználó iránytína
-- Akkor használatos amikor valamit meg kell változtatni a form-on miközben töltődik
-
-- onChange
-
-- Script will run when value of any field is upadated or changed
-- Used to perform some operation as per the field changed
-- paraméterei: control, oldValue, newValue, isLoading, isTemplate
-
-- onSubmit
-
-- script will run when form is submitted or saved
-- used to perform validations before form is saved
-
-- onCellEdit
-
-- script will run when a field value changes on a list
-- paraméterei: sysIds, table, oldValues, newValue, callback
-
-sysId - edited item(whatever item edited it will automatically hold that value)
-table - table name of the eited item
-callback - continue the execution of other related cell edit scripts
 
