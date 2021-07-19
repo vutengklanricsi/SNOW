@@ -1,5 +1,10 @@
 ----ServiceNow----
 
+- op
+- Knowledge management
+- Flow Designer Overview
+- GlideAjax
+- ACL control
 
 
 Service now egy task manager platform személyreszabható, konfigurálható fejleszthető cégek számára. 
@@ -192,7 +197,7 @@ GuideDialogWindow:
 
 - getBooleanValue() - megnézzük egy checkboxnak az értékét, ha a checkbox be van jelölve vagy sem. Igaz vagy hamis értékkel tér vissza? változóba menteni
 
-- getControl() - az elemet lehet lekérdezni. lekérdezhetjük a HTML element mezőjét. 
+**- getControl() - az elemet lehet lekérdezni. lekérdezhetjük a HTML element mezőjét. 
 		példa: Ha meg akarjuk változtatni egy incidens szövegének a színét.
 		Előszőr kijelljük az elemet és adunk rá css szabályt.
 		g_form.getControl()
@@ -206,14 +211,67 @@ GuideDialogWindow:
 - getLabelOf() - Incidens formnál jelezze ki alert-ben a Label-t.
 			pls.: alert(g_form.getLabelOf("short_description"));
 
-- getReference() - pl.: Az incidens from mutasson egy alert-et, ha caller(user) VIP.
+**- getReference() - pl.: Az incidens form mutasson egy alert-et, ha caller(user) VIP.
 			Honan lehet tudni, hogy valaki VIP?
 			Van egy olyan mező, hogy VIP. Egy checkbox field. ha be van jelölve akkoir a felhazsnáló vip
 
- - getValue() - a GlideRecord értékével tér vissza.
 
+- getSectionName() - sctions - notes, realted recors, resolution information. Megjeleníti az összes szekciót idézőjelbe.
 
+- getSections() - Form szekcióknak a listája.
 
+- getTable() - Visszaadja a Table nevét, hogy melyik rekordon van a rekord amin dolgozunk.
+Tehát amikor tudni akarjuk kliens oldalon, hogy melyik táblanevét amikor futtatjuk.
+idézőjelben.
+
+- getUniqeValue() - Visszaad egy egyedi értéket és az a egyedi érték a rekordnak a sys id-ja.
+
+**- getValue() - pl.: jelenjent meg egy alrt üzenet, ha a prioritás p1. 
+- getValue() - a GlideRecord értékével tér vissza. (tábla)
+
+- hideRelatedList() -  nem akarod megmutatni a related list-et.
+	Show affected CI related list when CI  is not empty.
+	Elrejti a hozzákapcsolódó listát.
+
+	!!!RELATED LINKS!!! alatt vannak
+
+	elrejti a bennelévő listát. 
+
+- isLiveUpdating() - Amikor élőben változik. g_isLiveUpdating ha true-t ad vissza az azt jelenti, hogy kirakhatunk rá kondíciót.
+
+- isMandatory() - leelenőrizzük, hogy a mező kötelezpő vagy sem. ha igen akkor visszaad egy értékét.
+
+- isNewRecord() - validálhatjuk, hogy a jelenlegi rekord új vagy sem. Új rekordnak számít az amire arra kattintunk, hogy alkosson új rekordot és nem mentjük le a form-ot.
+
+- isSectionVisible() - leelenőrizhetjük, hogy a section látható-e vagy sem.
+
+- removeDecoration()
+
+- removeOption()
+
+- save() - ha le akarjuk menteni a user action-jét, ha pl megnyom egy gombot és megváltoztat egy mezőt akkor mentse le anélkül, hogy megnyomnánk a mentés gombot.
+		pls.: description-t(megváltoztatjuk a mezőt) szerkesztjük és lementi automatikusan 
+
+- setDisabled() - Ha nem szeretnénk azt a mezőt láthatóvá tenni akkor használjuk.
+	de ui script-et jobban preferálják.!!!
+
+- setDisplay - Elérhető tesszük a mezőt.
+
+- mindig loggoljunk ki vagy alertel lehet leelenőrizni, hogy mit kapunk.
+
+- setLabelOf() - Beállíthatjuk a label-t a mezőnek. Tegyük fel, hogy a user más feltételek miatt más label-t fog keresni.
+
+- setMandatory() - átállíthatjuk, hogy egy mező kötelező legyen.
+
+- setReadOnly() - csak olvasni lehet.
+
+- setSectionDisplay() - megjeleníteni a section-t. booleanel tudjuk meghatározni, hogy meg akarjuk jeleníteni vagy sem. ha
+
+**- setValue() -  beállítja az értéket a jelenlegi felhasználónál.
+
+- showErrorBox() - show error message.
+
+-
 
 ---GlideAjax---
 
