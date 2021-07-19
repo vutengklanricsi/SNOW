@@ -164,7 +164,6 @@ GuideDialogWindow:
 ---Api Used in Client Script---
 
 
-
 - Glide Form:
 	- egy metüódus amivel testreszabhatjuk a form-okat.
 	- g_form syntax
@@ -178,10 +177,40 @@ GuideDialogWindow:
 
 - addOption: Option choice-t ad, választási lehetőséget ad a felhasználónak.
 
+- clearOptions - törli az összes kiválasztható opciót.
 
+- clearValue - kitörli az értéket a mezőből. kkliens oldalon kitörli viszont az adatbázisban megmarad.
 
+- disableAttachments() - letiltja az attachmentet amikor az incidenst megoldották.
+						Ne lehessen elérhető az attachments, ha megoldották az incidenst.
 
+-  enableAttachments() - Ha edig le volt tiltva az attachments akkor most letörlődik.
 
+- flash() - Ez akkor jó, ha fel akarjuk hívni a felhasználónak a figyelmét a mezőre.
+
+- getActionName() - bármire rákattintunk vagy az eseményynek(akciónak) az értékét akarjuk megkapni.
+
+- getBooleanValue() - megnézzük egy checkboxnak az értékét, ha a checkbox be van jelölve vagy sem. Igaz vagy hamis értékkel tér vissza? változóba menteni
+
+- getControl() - az elemet lehet lekérdezni. lekérdezhetjük a HTML element mezőjét. 
+		példa: Ha meg akarjuk változtatni egy incidens szövegének a színét.
+		Előszőr kijelljük az elemet és adunk rá css szabályt.
+		g_form.getControl()
+		a.style.color
+
+- getDecimalValue() - a tizedes értékét adja vissza a mezőnek.
+	pl.: g_form.getDecimalValue("field_name")
+
+- getIntValue() - Visszaadja a mezőnek az értékét integerben.
+
+- getLabelOf() - Incidens formnál jelezze ki alert-ben a Label-t.
+			pls.: alert(g_form.getLabelOf("short_description"));
+
+- getReference() - pl.: Az incidens from mutasson egy alert-et, ha caller(user) VIP.
+			Honan lehet tudni, hogy valaki VIP?
+			Van egy olyan mező, hogy VIP. Egy checkbox field. ha be van jelölve akkoir a felhazsnáló vip
+
+ - getValue() - a GlideRecord értékével tér vissza.
 
 
 
